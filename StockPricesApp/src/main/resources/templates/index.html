@@ -1,0 +1,33 @@
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Stock Prices</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="/webjars/sockjs-client/1.0.2/sockjs.min.js"></script>
+	<script src="/webjars/stomp-websocket/2.3.3/stomp.min.js"></script>
+	<script src="/app.js"></script>
+	<style>
+		table,
+		th,
+		td {
+			border: 1px solid black;
+			border-collapse: collapse;
+		}
+	</style>
+</head>
+
+<body>
+	<table id="stock-table" border="3">
+		<thead>
+			<tr>
+				<th>Company</th>
+				<th>Stock Price</th>
+			</tr>
+		</thead>
+		<tbody>
+		</tbody>
+	</table>
+</body>
+
+</html>
