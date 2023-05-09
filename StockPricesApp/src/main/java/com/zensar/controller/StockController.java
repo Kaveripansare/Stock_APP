@@ -17,8 +17,8 @@ public class StockController {
 	@Autowired
 	StockService stockService;
 
-	//@GetMapping("/stocks")
-	@MessageMapping("/stocks")
+	@GetMapping("/stocks")
+	//@MessageMapping("/stocks")
   	@SendTo("/topic/stocks")
 	public List<Stock> getAllStocks(){
 		List<Stock> stocks = stockService.getAllStocks();

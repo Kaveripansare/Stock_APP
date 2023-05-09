@@ -8,9 +8,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.zensar</groupId>
-	<artifactId>stockapp</artifactId>
+	<artifactId>StockPricesapp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>StockApplication</name>
+	<name>StockPricesapp</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>

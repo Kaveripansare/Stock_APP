@@ -26,8 +26,22 @@ pipeline {
 			steps {
 				dir("StockPricesApp/target") {
 					withEnv(['JENKINS_NODE_COOKIE=DontKillMe']) {
-						bat 'start java -Dserver.port=3000 -jar StockPricesApp-0.0.1-SNAPSHOT.jar'
+						bat 'start java -Dserver.port=3000 -jar StockPricesapp-0.0.1-SNAPSHOT.jar'
 					}
+				}
+			}
+		}
+		stage('Build stage') {
+			steps {
+				dir("StockPricesApp") {
+					bat 'docker build -t kaveripansare/stockapp'
+				}
+			}
+		}
+		stage('Run stage') {
+			steps {
+				dir("StockPricesApp") {
+					bat 'docker run -p 7777:8080 kaveripansare/stockapp'
 				}
 			}
 		}
