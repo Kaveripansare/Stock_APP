@@ -15,6 +15,21 @@ pipeline {
 				}
 			}
 		}
-		
+		stage('Install stage') {
+			steps {
+				dir("StockPricesApp") {
+					bat 'mvn install'
+				}
+			}
+		}
+		stage('Deploy stage') {
+			steps {
+				dir("StockPricesApp/target") {
+					withEnv(['JENKINS_NODE_COOKIE=DontKillMe']) {
+						bat 'start java -Dserver.port=3000 -jar StockPricesapp-0.0.1-SNAPSHOT.jar'
+					}
+				}
+			}
+		}
 	}
 }
